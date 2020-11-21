@@ -13,14 +13,16 @@ export const getServerSideProps = async () => {
 }
 
 const Index = (props: GridProps) => {
+	const { cards } = props
+
 	const router = useRouter()
-	const cards = usePosts(props.cards)
+	const posts = usePosts(cards)
 
 	return (
 		<>
 			<Meta />
 			<Nav active="posts" />
-			<Grid cards={cards} />
+			<Grid cards={posts} />
 			<button
 				onClick={async () => {
 					await logOut()

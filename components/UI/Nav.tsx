@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 import { logOut, useAuthState } from '../../lib/firebase'
 import theme from '../../lib/theme'
@@ -9,7 +8,6 @@ import style from '../../styles/UI/Nav.module.scss'
 
 const Nav = (props: NavProps) => {
 	const { active } = props
-	const router = useRouter()
 	const [user, loading] = useAuthState()
 
 	return (

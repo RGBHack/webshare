@@ -5,17 +5,29 @@
 	justify-content: center;
 }
 
+.profilePic {
+	display: flex;
+	align-items: center;
+}
+
+.profilePicImg {
+	border-radius: 994px !important;
+	width: 1.4rem !important;
+	height: 1.4rem !important;
+	margin-right: 0.5rem;
+}
+
 .card {
 	width: 100%;
 	box-shadow: 0 2.5px 6.8px rgba(0, 0, 0, 0.028), 0 8.3px 22.8px rgba(0, 0, 0, 0.042),
 		0 37px 102px rgba(0, 0, 0, 0.07);
-
 	padding: 20px;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
+	cursor: pointer;
 
 	&:hover {
 		box-shadow: 0 2.5px 6.8px rgba(0, 0, 0, 0.032),
@@ -25,10 +37,12 @@
 	h1 {
 		color: #111212;
 		font-weight: 600;
+		margin-bottom: 0.5rem;
 	}
 
-	p {
+	h2 {
 		color: #111212;
+		margin-bottom: 0.2rem;
 		font-weight: 300;
 	}
 
@@ -40,25 +54,36 @@
 
 	.tag {
 		margin-top: 0.7rem;
-		display: flex;
 		align-items: center;
 		padding: 0.2rem 0.5rem;
 		background-color: #0fbea73a;
 		color: #0fbea7;
 		border-radius: 4px;
+		display: flex;
+		margin-right: 0.5rem;
+		justify-content: center;
 
 		.circle {
 			background-color: #0fbea7;
 			border-radius: 9999px;
 			height: 10px;
 			width: 10px;
-			margin-right: 0.2rem;
+			margin-right: 0.3rem;
 		}
 
 		p {
 			color: #0fbea7;
 			font-size: 0.7em;
 			font-weight: bold;
+		}
+	}
+
+	.tagCollection {
+		display: flex;
+		width: 100%;
+
+		&:first-child {
+			margin-right: 0.5rem;
 		}
 	}
 }

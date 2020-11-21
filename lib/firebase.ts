@@ -51,7 +51,9 @@ export const getPosts = async (limit: number = 10) => {
 		.orderBy('date', 'desc')
 		.limit(limit)
 		.get()
-	return res.docs.map((doc) => doc.data()) as CardProps[]
+	return res.docs.map((doc) => {
+		return { ...doc.data(), id: doc.id }
+	}) as CardProps[]
 }
 
 export const usePosts = (def: CardProps[], limit: number = 10) => {
@@ -63,15 +65,19 @@ export const usePosts = (def: CardProps[], limit: number = 10) => {
 			.orderBy('date', 'desc')
 			.limit(limit)
 			.onSnapshot((res) => {
-				setProps(res.docs.map((doc) => doc.data()) as CardProps[])
+				setProps(
+					res.docs.map((doc) => {
+						return { ...doc.data(), id: doc.id }
+					}) as CardProps[]
+				)
 			})
 	}, [])
 	return props
 }
 
 export const getPost = async (id: string) => {
-	const doc = (await firebase.firestore().collection('posts').doc(id).get()).data()!
-	return doc as CardProps
+	const doc = await firebase.firestore().collection('posts').doc(id).get()
+	return { ...doc.data!(), id: doc.id } as CardProps
 }
 
 export const addPost = async (user: firebase.User, title: string, image: File) => {
@@ -88,7 +94,7 @@ export const addPost = async (user: firebase.User, title: string, image: File) =
 			body: formData,
 		})
 		const tags = (await ai.text()).split(',')
-		const data: CardProps = {
+		const data = {
 			name: user.displayName || '',
 			profilePic: user.photoURL || '',
 			uid: user.uid,

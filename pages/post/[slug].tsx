@@ -1,4 +1,5 @@
 import { GetServerSidePropsContext } from 'next'
+import { useRouter } from 'next/router'
 
 import Meta from '../../components/SEO/Meta'
 import Card from '../../components/UI/Card'
@@ -8,23 +9,35 @@ import { CardProps } from '../../lib/types'
 
 export const getServerSideProps = async ({ query }: GetServerSidePropsContext) => {
 	const { slug } = query
-	const card = await getPost(slug as string)
-	return { props: { card } }
+	try {
+		const card = await getPost(slug as string)
+		return { props: { card } }
+	} catch (e) {
+		return { props: { card: null } }
+	}
 }
 
 interface CardPropsProp {
-	card: CardProps
+	card: CardProps | null
 }
 
-const Index = (props: CardPropsProp) => {
+const Slug = (props: CardPropsProp) => {
 	const { card } = props
+	const router = useRouter()
+
+	if (card === null) {
+		router.push('/')
+		return <></>
+	}
+	const trueCard = card!
+
 	return (
 		<>
 			<Meta />
 			<Nav active="posts" />
-			<Card {...card} />
+			<Card {...trueCard} />
 		</>
 	)
 }
 
-export default Index
+export default Slug

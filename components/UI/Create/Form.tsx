@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 import { addPost, useAuthState } from '../../../lib/firebase'
 import style from '../../../styles/UI/Create/Form.module.scss'
@@ -9,6 +9,7 @@ const Create = () => {
 	const fileEl = useRef<null | HTMLInputElement>(null)
 	const postButton = useRef(null)
 	const [user] = useAuthState()
+	const [loading, setLoading] = useState(false)
 	const router = useRouter()
 
 	const handleClick = () => {
@@ -20,13 +21,20 @@ const Create = () => {
 			<form
 				onSubmit={async (e) => {
 					e.preventDefault()
-					if (textEl?.current && fileEl?.current) {
-						if (user)
-							await addPost(
-								user,
-								textEl.current.value,
-								fileEl.current.files![0]
-							)
+					setLoading(true)
+					alert('Please wait for the post to be processed')
+					try {
+						if (textEl?.current && fileEl?.current) {
+							if (user)
+								await addPost(
+									user,
+									textEl.current.value,
+									fileEl.current.files![0]
+								)
+						}
+					} catch (err) {
+						alert(`An error occured! ${err}`)
+						setLoading(false)
 					}
 					router.push('/')
 				}}
@@ -56,7 +64,7 @@ const Create = () => {
 					>
 						Upload File
 					</button>
-					<input id="submitPost" type="submit" />
+					<input id="submitPost" type="submit" disabled={loading} />
 				</div>
 			</form>
 		</div>

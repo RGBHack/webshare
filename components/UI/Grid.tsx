@@ -10,7 +10,7 @@ const Grid = (props: GridProps) => {
 	return (
 		<div className={style.projectgrid}>
 			{cards.map((card) => (
-				<Card {...card} />
+				<Card {...card} key={card.id} />
 			))}
 		</div>
 	)
