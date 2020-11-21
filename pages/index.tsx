@@ -1,12 +1,11 @@
 import Meta from '../components/Meta'
+import Nav from '../components/UI/Nav'
 
 const Index = () => {
 	return (
 		<>
 			<Meta />
-			<div>
-				<h1>test</h1>
-			</div>
+			<Nav active="posts" />
 		</>
 	)
 }

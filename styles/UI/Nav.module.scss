@@ -1,0 +1,33 @@
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.navlink {
+	font-weight: 500;
+	margin: 0 3rem;
+
+	&:hover {
+		color: #0fbea7 !important;
+		cursor: pointer;
+	}
+
+	.active {
+		color: #0fbea7;
+	}
+}
+
+@media only screen and(max-width: 768px) {
+	.navlink {
+		margin: 0 0.8rem;
+		font-size: 1rem;
+	}
+}
+
+@media only screen and(max-width: 400px) {
+	.spacer {
+		display: none;
+	}
+}

@@ -12,6 +12,8 @@
 		"format:ci": "prettier --check '*/**/*.{js,ts,tsx,yml,scss}'"
 	},
 	"dependencies": {
+		"@firebase/auth-types": "^0.10.1",
+		"firebase": "^7.14.3",
 		"next": "10.0.2",
 		"react": "17.0.1",
 		"react-dom": "17.0.1",
