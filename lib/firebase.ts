@@ -45,10 +45,20 @@ export const logOut = async () => {
 }
 
 export const getPosts = async (limit: number = 10) => {
-	const res = await firebase.firestore().collection('posts').limit(limit).get()
-	return res.docs
-		.map((doc) => doc.data())
-		.map((doc) => ({ ...doc, date: doc.date })) as CardProps[]
+	const res = await firebase.firestore().collection('posts').orderBy("date","desc").limit(limit).get()
+	const other_res = res.docs.map((doc) => doc.data()) as CardProps[]
+	console.log(other_res)
+	return other_res
+}
+
+export const usePosts = async (def: CardProps[], limit: number = 10,) => {
+	const [props, setProps] = useState(def)
+	useEffect(() => {
+		firebase.firestore().collection('posts').orderBy("date","desc").limit(limit).onSnapshot((res) => {
+			setProps(res.docs.map((doc) => doc.data()) as CardProps[])
+		})
+	}, [])
+	return props
 }
 
 export const getPost = async (id: string) => {
@@ -65,9 +75,7 @@ export const addPost = async (user: firebase.User, title: string, image: File) =
 		const url = await imageUpload.ref.getDownloadURL()
 		const formData = new FormData()
 		formData.append('file', image)
-		const ai = await fetch('http://52.247.200.183/ai', {method: 'POST', body: formData})
-		const aitext = await ai.text()
-		console.log(aitext)
+		const ai = await fetch('http://webshare-ai.team3749.org/ai', {method: 'POST', body: formData})
 		const array_of_ai = (await ai.text()).split(',')
 		const data: CardProps = {
 			name: user.displayName || '',
@@ -78,7 +86,7 @@ export const addPost = async (user: firebase.User, title: string, image: File) =
 				image: url,
 				tags: array_of_ai,
 			},
-			date: new Date().getMilliseconds(),
+			date: new Date().getTime(),
 		}
 		await firebase.firestore().collection('posts').add(data)
 	}
