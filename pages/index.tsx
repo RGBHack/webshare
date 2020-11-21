@@ -11,6 +11,7 @@ export const getStaticProps = async () => {
 
 const Index = (props: GridProps) => {
 	const { cards } = props
+
 	return (
 		<>
 			<Meta />
