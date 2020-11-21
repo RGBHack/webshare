@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
+import { logOut, useAuthState } from '../../lib/firebase'
 import theme from '../../lib/theme'
 import { NavProps } from '../../lib/types'
 import style from '../../styles/UI/Nav.module.scss'
 
 const Nav = (props: NavProps) => {
 	const { active } = props
+	const router = useRouter()
+	const [user, loading] = useAuthState()
+
 	return (
 		<div className={style.nav}>
 			<div>
@@ -33,16 +38,21 @@ const Nav = (props: NavProps) => {
 						NEW
 					</a>
 				</Link>
-				<Link href="https://google.com">
-					<a
-						className={style.navlink}
-						style={{
-							color: active === 'signup' ? theme.accent : theme.bg,
-						}}
-					>
-						SIGN UP
-					</a>
-				</Link>
+				{!loading && (
+					<Link href="/login">
+						<a
+							className={style.navlink}
+							style={{
+								color: active === 'login' ? theme.accent : theme.bg,
+							}}
+							onClick={async () => {
+								await logOut()
+							}}
+						>
+							{!user ? 'LOG IN' : 'LOG OUT'}
+						</a>
+					</Link>
+				)}
 			</div>
 			<div className={style.spacer}>
 				<Image

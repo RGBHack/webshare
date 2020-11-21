@@ -7,8 +7,10 @@ const Card = (props: CardProps) => {
 	return (
 		<div className={style.cardWrapper}>
 			<div className={style.card}>
-				<h1>{name}</h1>
-				<p>{media.title}</p>
+				<div>
+					<h1>{name}</h1>
+					<p>{media.title}</p>
+				</div>
 				<img
 					src={media.image}
 					alt={`${name}'s post: ${media.title}`}

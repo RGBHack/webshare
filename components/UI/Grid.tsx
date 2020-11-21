@@ -9,7 +9,7 @@ const Grid = (props: GridProps) => {
 
 	return (
 		<div className={style.projectgrid}>
-			{cards.map((card) => (
+			{cards.reverse().map((card) => (
 				<Card {...card} />
 			))}
 		</div>

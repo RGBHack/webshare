@@ -15,5 +15,5 @@ export interface GridProps {
 }
 
 export interface NavProps {
-	active: 'posts' | 'new' | 'signup'
+	active: 'posts' | 'new' | 'login'
 }
