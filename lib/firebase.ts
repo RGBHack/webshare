@@ -63,6 +63,12 @@ export const addPost = async (user: firebase.User, title: string, image: File) =
 			.ref(`${user.uid}/${image.name}`)
 			.put(image)
 		const url = await imageUpload.ref.getDownloadURL()
+		const formData = new FormData()
+		formData.append('file', image)
+		const ai = await fetch('http://52.247.200.183/ai', {method: 'POST', body: formData})
+		const aitext = await ai.text()
+		console.log(aitext)
+		const array_of_ai = (await ai.text()).split(',')
 		const data: CardProps = {
 			name: user.displayName || '',
 			profilePic: user.photoURL || '',
@@ -70,7 +76,7 @@ export const addPost = async (user: firebase.User, title: string, image: File) =
 			media: {
 				title,
 				image: url,
-				tags: ['test'],
+				tags: array_of_ai,
 			},
 			date: new Date().getMilliseconds(),
 		}

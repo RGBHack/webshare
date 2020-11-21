@@ -8,22 +8,22 @@ const Create = () => {
 	const textEl = useRef<null | HTMLInputElement>(null)
 	const fileEl = useRef<null | HTMLInputElement>(null)
 	const [user] = useAuthState()
-	const rooter = useRouter()
+	const router = useRouter()
 
 	return (
 		<div className={style.cardWrapper}>
 			<form
-				onSubmit={(e) => {
+				onSubmit={async (e) => {
 					e.preventDefault()
 					if (textEl?.current && fileEl?.current) {
 						if (user)
-							addPost(
+							await addPost(
 								user,
 								textEl.current.value,
 								fileEl.current.files![0]
 							)
 					}
-					rooter.push('/')
+					router.push('/')
 				}}
 			>
 				<div className={style.form}>
@@ -35,4 +35,5 @@ const Create = () => {
 		</div>
 	)
 }
+
 export default Create
