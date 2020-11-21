@@ -18,6 +18,7 @@
 		"react": "17.0.1",
 		"react-dom": "17.0.1",
 		"sass": "^1.29.0",
+		"styled-components": "^4.4.1",
 		"styled-preflight": "^8.0.1"
 	},
 	"devDependencies": {
