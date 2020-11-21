@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Meta from '../components/SEO/Meta'
 import Grid from '../components/UI/Grid'
 import Nav from '../components/UI/Nav'
-import { getPosts, logOut } from '../lib/firebase'
+import { getPosts, logOut, usePosts } from '../lib/firebase'
 import { GridProps } from '../lib/types'
 import style from '../styles/UI/Index.module.scss'
 
@@ -14,7 +14,7 @@ export const getServerSideProps = async () => {
 
 const Index = (props: GridProps) => {
 	const router = useRouter()
-	const { cards } = props
+	const cards = usePosts(props.cards)
 
 	return (
 		<>

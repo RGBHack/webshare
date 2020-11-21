@@ -51,7 +51,7 @@ export const getPosts = async (limit: number = 10) => {
 	return other_res
 }
 
-export const usePosts = async (def: CardProps[], limit: number = 10,) => {
+export const usePosts = (def: CardProps[], limit: number = 10,) => {
 	const [props, setProps] = useState(def)
 	useEffect(() => {
 		firebase.firestore().collection('posts').orderBy("date","desc").limit(limit).onSnapshot((res) => {
