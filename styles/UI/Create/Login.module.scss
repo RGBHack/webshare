@@ -1,11 +1,16 @@
-.loginButton {
-	margin: 0 auto;
-	padding: 20px;
+.loginWrapper {
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.logoutButton {
+.loginButton {
 	margin: 0 auto;
-	padding: 20px;
+	padding: 0.5rem 1rem;
+	background-color: #0fbea73a;
+	color: #0fbea7;
 }
 
 .login {

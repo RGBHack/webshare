@@ -1,4 +1,48 @@
 .form {
-    display: flex;
+	h1 {
+		font-weight: 600;
+		font-size: 3rem;
+	}
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 300px;
+	margin: 0 auto;
+
+	input {
+		border: 2px solid #0fbea73a;
+		padding: 0.5rem 1rem;
+		margin: 0.5rem 0rem;
+		text-align: center;
+		border-radius: 3px;
+		&::placeholder {
+			text-align: center;
+		}
+		width: 100%;
+		display: block;
+	}
+	.fileButton {
+		background-color: #0fbea73a;
+		padding: 0.5rem 1rem;
+		color: #0fbea7;
+		border: none;
+		display: block;
+		width: 100%;
+	}
+	input[type='submit'] {
+		background-color: #0fbea7;
+		padding: 0.5rem 1rem;
+		color: #fff;
+		border: none;
+	}
+}
+
+.formWrapper {
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
 	justify-content: center;
 }
