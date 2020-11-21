@@ -51,20 +51,21 @@ export const getPosts = async (limit: number = 10) => {
 		.map((doc) => ({ ...doc, date: doc.date })) as CardProps[]
 }
 
-export const addPost = async (title: string, image: File) => {
-	const user = firebase.auth().currentUser
+export const addPost = async (user: firebase.User, title: string, image: File) => {
+  console.log(firebase.auth().currentUser)
 	if (user) {
 		const imageUpload = await firebase
 			.storage()
 			.ref(`${user.uid}/${image.name}`)
-			.put(image)
+      .put(image)
+    const url = await imageUpload.ref.getDownloadURL()
 		const data: CardProps = {
 			name: user.displayName || '',
 			profilePic: user.photoURL || '',
 			uid: user.uid,
 			media: {
 				title,
-				image: imageUpload.downloadURL!,
+				image: url,
 				tags: ['test'],
 			},
 			date: new Date().getMilliseconds(),

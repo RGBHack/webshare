@@ -13,7 +13,7 @@ const Nav = (props: NavProps) => {
 				<Image src="/icon.png" alt="Site Icon" width={30} height={30} />
 			</div>
 			<div>
-				<Link href="https://google.com" passHref>
+				<Link href="/" passHref>
 					<a
 						className={style.navlink}
 						style={{
@@ -23,7 +23,7 @@ const Nav = (props: NavProps) => {
 						POSTS
 					</a>
 				</Link>
-				<Link href="https://google.com">
+				<Link href="/create">
 					<a
 						className={style.navlink}
 						style={{
