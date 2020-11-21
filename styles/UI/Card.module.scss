@@ -7,7 +7,6 @@
 
 .profilePic {
 	display: flex;
-	align-items: center;
 }
 
 .profilePicImg {
@@ -19,8 +18,9 @@
 
 .card {
 	width: 100%;
-	box-shadow: 0 2.5px 6.8px rgba(0, 0, 0, 0.028), 0 8.3px 22.8px rgba(0, 0, 0, 0.042),
-		0 37px 102px rgba(0, 0, 0, 0.07);
+	box-shadow: 0 1.3px 3.2px rgba(0, 0, 0, 0.028), 0 4.2px 10.7px rgba(0, 0, 0, 0.042),
+		0 19px 48px rgba(0, 0, 0, 0.07);
+
 	padding: 20px;
 	border-radius: 5px;
 	display: flex;
@@ -30,8 +30,8 @@
 	cursor: pointer;
 
 	&:hover {
-		box-shadow: 0 2.5px 6.8px rgba(0, 0, 0, 0.032),
-			0 8.3px 22.8px rgba(0, 0, 0, 0.048), 0 37px 102px rgba(0, 0, 0, 0.08);
+		box-shadow: 0 2.5px 3.2px rgba(0, 0, 0, 0.048),
+			0 8.3px 10.7px rgba(0, 0, 0, 0.072), 0 37px 48px rgba(0, 0, 0, 0.12);
 	}
 
 	h1 {
