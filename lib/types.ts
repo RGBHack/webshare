@@ -7,7 +7,11 @@ export interface CardProps {
 		title: string
 		tags: string[]
 	}
-	date: Date
+	date: number
+}
+
+export interface GridProps {
+	cards: CardProps[]
 }
 
 export interface NavProps {

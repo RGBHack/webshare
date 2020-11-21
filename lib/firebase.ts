@@ -44,8 +44,11 @@ export const logOut = async () => {
 	await firebase.auth().signOut()
 }
 
-export const getPosts = async (limit: number) => {
-	return firebase.firestore().collection('posts').limit(limit).get()
+export const getPosts = async (limit: number = 10) => {
+	const res = await firebase.firestore().collection('posts').limit(limit).get()
+	return res.docs
+		.map((doc) => doc.data())
+		.map((doc) => ({ ...doc, date: doc.date })) as CardProps[]
 }
 
 export const addPost = async (title: string, image: File) => {
@@ -64,7 +67,7 @@ export const addPost = async (title: string, image: File) => {
 				image: imageUpload.downloadURL!,
 				tags: ['test'],
 			},
-			date: new Date(),
+			date: new Date().getMilliseconds(),
 		}
 		await firebase.firestore().collection('posts').add(data)
 	}

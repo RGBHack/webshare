@@ -1,0 +1,8 @@
+.projectgrid {
+	max-width: 1000px;
+	padding: 0rem 3rem;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(200px, 1fr));
+	grid-gap: 3px;
+}
