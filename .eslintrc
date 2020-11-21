@@ -1,0 +1,38 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"airbnb",
+		"prettier",
+		"plugin:import/typescript"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": ["prettier", "react", "simple-import-sort", "@typescript-eslint"],
+	"rules": {
+		"react/react-in-jsx-scope": 0,
+		"react/jsx-filename-extension": 0,
+		"react/jsx-props-no-spreading": 0,
+		"react/jsx-indent": 0,
+		"react/jsx-indent-props": 0,
+		"react/jsx-one-expression-per-line": 0,
+		"react/prop-types": 0,
+		"prettier/prettier": "error",
+		"no-use-before-define": 0,
+		"sort-imports": "off",
+		"import/order": "off",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
+		"import/extensions": 0,
+		"no-nested-ternary": 0
+	}
+}
