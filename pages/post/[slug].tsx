@@ -35,7 +35,7 @@ const Slug = (props: CardPropsProp) => {
 		<>
 			<Meta />
 			<Nav active="posts" />
-			<Card {...trueCard} />
+			<Card {...trueCard} isZoomed />
 		</>
 	)
 }

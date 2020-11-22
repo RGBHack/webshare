@@ -9,6 +9,7 @@ export interface CardProps {
 		tags: string[]
 	}
 	date: number
+	isZoomed?: boolean
 }
 
 export interface GridProps {

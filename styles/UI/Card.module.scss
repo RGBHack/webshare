@@ -3,10 +3,13 @@
 	height: 100%;
 	display: flex;
 	justify-content: center;
+	word-wrap: break-all !important;
 }
 
 .profilePic {
 	display: flex;
+	align-items: center;
+	margin-bottom: 0.5rem;
 }
 
 .profilePicImg {
@@ -27,28 +30,31 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	cursor: pointer;
+	word-break: break-all !important;
 
 	&:hover {
 		box-shadow: 0 2.5px 3.2px rgba(0, 0, 0, 0.048),
 			0 8.3px 10.7px rgba(0, 0, 0, 0.072), 0 37px 48px rgba(0, 0, 0, 0.12);
 	}
 
+	&:hover .copy {
+		opacity: 1 !important;
+	}
+
 	h1 {
 		color: #111212;
-		font-weight: 600;
-		margin-bottom: 0.5rem;
 	}
 
 	h2 {
 		color: #111212;
 		margin-bottom: 0.2rem;
+		word-break: break-all !important;
 		font-weight: 300;
 	}
 
-	img {
-		color: #111212;
+	.cardImage {
 		width: 100%;
+		cursor: pointer;
 		border-radius: 3px;
 	}
 
@@ -80,10 +86,64 @@
 
 	.tagCollection {
 		display: flex;
+		align-items: flex-end;
 		width: 100%;
 
 		&:first-child {
 			margin-right: 0.5rem;
 		}
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
+}
+
+.copy {
+	opacity: 0;
+	height: 19px;
+	cursor: pointer;
+	order: 2;
+	margin-left: auto;
+}
+
+.cardBar {
+	width: 100%;
+}
+
+.zoomedCardImage {
+	max-width: 400px !important;
+}
+
+.cardZoomed {
+	box-shadow: none !important;
+	.copy {
+		display: none !important;
+	}
+	& > * {
+		margin: 0.5rem;
+	}
+	align-items: center;
+	justify-content: center;
+}
+
+.zoomedCardBar {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.zoomedProfilePic {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.zoomedTagCollection {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: 0 auto;
 }
