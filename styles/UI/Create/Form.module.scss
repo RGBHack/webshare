@@ -36,6 +36,12 @@
 		padding: 0.5rem 1rem;
 		color: #fff;
 		border: none;
+  }
+  input[type='submit']:hover {
+		cursor: pointer;
+  }
+  input[type='submit']:disabled {
+		cursor: not-allowed;
 	}
 }
 
