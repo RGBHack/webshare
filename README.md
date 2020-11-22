@@ -13,11 +13,11 @@ Webshare is a a web app built for sharing experiences through images. It feature
 
 -   AI Image Classification
 -   Post Tagging & Filtering
--	Secure Google OAuth 2.0 Authenticaton
+-   Secure Google OAuth 2.0 Authenticaton
 
 ## ✨ In Action
 
-<img src="./docs/demo.png" width="250" />
+<img src="./docs/demo.png" />
 
 ## 👨‍💻 Authors
 
@@ -25,4 +25,4 @@ Webshare is a a web app built for sharing experiences through images. It feature
 -   [Safin Singh](https://safin.dev)
 -   [Rohan Juneja](https://rohanj.dev)
 -   [Aadit Gupta](https://aaditgupta.tech)
-- 	[Alvin Zheng](https://www.linkedin.com/in/alvin-zheng-q/)
+-   [Alvin Zheng](https://www.linkedin.com/in/alvin-zheng-q/)

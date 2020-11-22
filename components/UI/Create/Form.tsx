@@ -22,7 +22,9 @@ const Create = () => {
 				onSubmit={async (e) => {
 					e.preventDefault()
 					setLoading(true)
-					alert('Please wait for the post to be processed. This may take around 5-10 seconds.')
+					alert(
+						'Please wait for the post to be processed. This may take around 5-10 seconds.'
+					)
 					try {
 						if (textEl?.current && fileEl?.current) {
 							if (user)
@@ -37,7 +39,6 @@ const Create = () => {
 						alert('An error occured! Please try again!')
 						setLoading(false)
 					}
-
 				}}
 			>
 				<div className={style.form}>

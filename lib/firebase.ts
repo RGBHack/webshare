@@ -7,15 +7,15 @@ import { useEffect, useState } from 'react'
 
 import { CardProps } from './types'
 
-var firebaseConfig = {
-  apiKey: "AIzaSyB4nW6VeBK3siPJ2pacMJwBkhrpHW8txc0",
-  authDomain: "webshare-2121.firebaseapp.com",
-  databaseURL: "https://webshare-2121.firebaseio.com/",
-  projectId: "webshare-2121",
-  storageBucket: "webshare-2121.appspot.com",
-  messagingSenderId: "955442642495",
-  appId: "1:955442642495:web:317678fc419e299c01828a"
-};
+const firebaseConfig = {
+	apiKey: 'AIzaSyB4nW6VeBK3siPJ2pacMJwBkhrpHW8txc0',
+	authDomain: 'webshare-2121.firebaseapp.com',
+	databaseURL: 'https://webshare-2121.firebaseio.com/',
+	projectId: 'webshare-2121',
+	storageBucket: 'webshare-2121.appspot.com',
+	messagingSenderId: '955442642495',
+	appId: '1:955442642495:web:317678fc419e299c01828a',
+}
 
 if (firebase.apps.length === 0) firebase.initializeApp(firebaseConfig)
 
