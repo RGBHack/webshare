@@ -55,7 +55,7 @@ export const getPosts = async (limit: number = 50) => {
 	}) as CardProps[]
 }
 
-export const usePosts = (def: CardProps[], limit: number = 10) => {
+export const usePosts = (def: CardProps[], limit: number = 50) => {
 	const [props, setProps] = useState(def)
 	useEffect(() => {
 		return firebase
