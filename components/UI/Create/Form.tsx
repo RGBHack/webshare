@@ -22,7 +22,7 @@ const Create = () => {
 				onSubmit={async (e) => {
 					e.preventDefault()
 					setLoading(true)
-					alert('Please wait for the post to be processed')
+					alert('Please wait for the post to be processed. This may take around 5-10 seconds.')
 					try {
 						if (textEl?.current && fileEl?.current) {
 							if (user)
@@ -31,12 +31,13 @@ const Create = () => {
 									textEl.current.value,
 									fileEl.current.files![0]
 								)
+							router.push('/')
 						}
 					} catch (err) {
-						alert(`An error occured! ${err}`)
+						alert('An error occured! Please try again!')
 						setLoading(false)
 					}
-					router.push('/')
+
 				}}
 			>
 				<div className={style.form}>

@@ -16,7 +16,7 @@ const Meta = () => {
 
 			{/* Open Graph */}
 			<meta property="og:description" content="Pass on your images" />
-			<meta property="og:url" content="https://safin.dev" />
+			<meta property="og:url" content="https://webshare.team3749.org" />
 			<meta property="og:type" content="website" />
 			<meta property="og:title" content="Webshare" />
 			<meta property="og:site_name" content="Webshare" />
@@ -29,8 +29,8 @@ const Meta = () => {
 
 			{/* Twitter */}
 			<meta name="twitter:card" content="Pass on your images" />
-			<meta name="twitter:url" content="https://safin.dev" />
-			<meta name="twitter:title" content="Safin Singh" />
+			<meta name="twitter:url" content="https://webshare.team3749.org" />
+			<meta name="twitter:title" content="Team Optix" />
 			<meta name="twitter:description" content="Pass on your images" />
 			<meta name="twitter:image" content="/icon.png" />
 
@@ -68,7 +68,7 @@ const Meta = () => {
 			{/* Misc */}
 			<meta name="viewport" content="width=device-width,initial-scale=1" />
 			<meta name="theme-color" content={theme.accent} />
-			<link rel="canonical" href="https://safin.dev" />
+			<link rel="canonical" href="https://webshare.team3749.org" />
 
 			{/* External Dependencies */}
 			<link rel="preconnect" href="https://fonts.gstatic.com" />

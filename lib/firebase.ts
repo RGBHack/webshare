@@ -59,7 +59,7 @@ export const getPosts = async (limit: number = 10) => {
 export const usePosts = (def: CardProps[], limit: number = 10) => {
 	const [props, setProps] = useState(def)
 	useEffect(() => {
-		firebase
+		return firebase
 			.firestore()
 			.collection('posts')
 			.orderBy('date', 'desc')
