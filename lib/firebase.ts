@@ -89,7 +89,7 @@ export const addPost = async (user: firebase.User, title: string, image: File) =
 		const url = await imageUpload.ref.getDownloadURL()
 		const formData = new FormData()
 		formData.append('file', image)
-		const ai = await fetch('http://webshare-ai.team3749.org/ai', {
+		const ai = await fetch('https://webshare-ai.team3749.org/ai', {
 			method: 'POST',
 			body: formData,
 		})
