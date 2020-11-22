@@ -9,16 +9,15 @@
 
 ## 🎨 Features
 
-Webshare is a website to share on pictures. It features:
+Webshare is a a web app built for sharing experiences through images. It features:
 
 -   AI Image Classification
--   Post Tags
--	Post Filtering
+-   Post Tagging & Filtering
 -	Secure Google OAuth 2.0 Authenticaton
 
 ## ✨ In Action
 
-<img src="./assets/demo.png" width="250" />
+<img src="./docs/demo.png" width="250" />
 
 ## 👨‍💻 Authors
 
