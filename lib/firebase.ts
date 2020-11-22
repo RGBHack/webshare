@@ -43,7 +43,7 @@ export const logOut = async () => {
 	await firebase.auth().signOut()
 }
 
-export const getPosts = async (limit: number = 10) => {
+export const getPosts = async (limit: number = 50) => {
 	const res = await firebase
 		.firestore()
 		.collection('posts')
