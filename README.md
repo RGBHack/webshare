@@ -11,7 +11,7 @@
 
 Webshare is a a web app built for sharing experiences through images. It features:
 
--   AI Image Classification
+-   <a href="https://github.com/rgbhack/webshare-ai">AI Image Classification</a>
 -   Post Tagging & Filtering
 -   Secure Google OAuth 2.0 Authenticaton
 
