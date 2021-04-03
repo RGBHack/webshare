@@ -1,0 +1,5 @@
+- [ ] switch tags to manual
+- [ ] add upvote
+- [ ] add profile (see posts per user)
+- [ ] (maybe) improve login page
+- [ ] (maybe) switch from post slug to enlarging image
